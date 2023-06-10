@@ -4,7 +4,7 @@ import 'pannellum/build/pannellum.css';
 import React, { useEffect, useRef } from 'react';
 
 declare namespace pannellum {
-    interface viewerOptions extends Partial<PanoramaViewerProps> {
+    interface viewerOptions extends Partial<ViewerOptions> {
         type: string;
         panorama: string;
         // Add other options here
@@ -44,6 +44,8 @@ interface PanoramaViewerProps {
     hotSpots: Hotspot[];
     autoLoad?: boolean;
     autoRotate?: number;
+    compass?: boolean;
+    showControls?: boolean;
     width?: string;
     height?: string;
 
@@ -60,16 +62,75 @@ export interface Hotspot {
     text?: string;
     URL?: string;
     cssClass?: string;
+    onClick?: Function;
+    createTooltipFunc?: Function;
+}
+
+interface ViewerOptions {
+    type: string;
+    panorama: string;
+    autoLoad?: boolean;
+    autoRotate?: number;
+    hotSpotDebug?: boolean;
+    yaw?: number;
+    pitch?: number;
+    hfov?: number;
+    vaov?: number;
+    minHfov?: number;
+    maxHfov?: number;
+    minPitch?: number;
+    maxPitch?: number;
+    showControls?: boolean;
+    showZoomCtrl?: boolean;
+    keyboardZoom?: boolean;
+    mouseZoom?: boolean;
+    showFullscreenCtrl?: boolean;
+    compass?: boolean;
+    compassOffset?: [number, number];
+    hotSpots?: PanenellumHotSpot[];
+}
+
+interface PanenellumHotSpot {
+    pitch: number;
+    yaw: number;
+    type: string;
+    text?: string;
+    URL?: string;
+    cssClass?: string;
     createTooltipFunc?: Function;
     clickHandlerFunc?: Function;
 }
 
+const defaultConfig: ViewerOptions = {
+    type: 'equirectangular',
+    panorama: '',
+    autoLoad: true,
+    autoRotate: 0,
+    hotSpotDebug: false,
+    yaw: 0,
+    pitch: 0,
+    hfov: 100,
+    vaov: 75,
+    minHfov: 50,
+    maxHfov: 120,
+    minPitch: -90,
+    maxPitch: 90,
+    showZoomCtrl: true,
+    keyboardZoom: true,
+    mouseZoom: true,
+    showFullscreenCtrl: true,
+    compass: true,
+    compassOffset: [10, 10],
+    hotSpots: [],
+};
 
 const PanoramaViewer: React.FC<PanoramaViewerProps> = ({
     imagePath,
     hotSpots,
     autoLoad,
     autoRotate,
+    compass,
+    showControls,
     width,
     height,
     hotSpotDebug
@@ -87,10 +148,12 @@ const PanoramaViewer: React.FC<PanoramaViewerProps> = ({
                 autoLoad: !!autoLoad,
                 autoRotate: autoRotate || 0,
                 hotSpotDebug: !!hotSpotDebug,
-                hotSpots,
+                compass: !!compass,
+                showControls: !!showControls,
+                hotSpots: hotSpots.map(hotSpot => ({ ...hotSpot, clickHandlerFunc: hotSpot.onClick })),
             });
 
-            console.warn(viewer)
+            // console.warn(viewer)
 
         }
 
