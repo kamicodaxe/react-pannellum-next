@@ -1,0 +1,31 @@
+{
+  "name": "react-pannellum-next",
+  "version": "1.0.0",
+  "description": "The `PanoramaViewer` component is a React component that provides a panoramic image viewer using the Pannellum library. It allows you to display a 360-degree image and add interactive hotspots to it.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kamicodaxe/react-pannellum-next.git"
+  },
+  "keywords": [
+    "360",
+    "image",
+    "viewer",
+    "pannellum",
+    "react-pannellum"
+  ],
+  "author": "Loïc Kami",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kamicodaxe/react-pannellum-next/issues"
+  },
+  "homepage": "https://github.com/kamicodaxe/react-pannellum-next#readme",
+  "dependencies": {
+    "pannellum": "^2.5.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
