@@ -14,6 +14,7 @@ $parcel$export(module.exports, "PanoramaViewer", function () { return $332b06753
 
 
 
+
 "use client";
 const $332b06753a23f2ac$var$defaultConfig = {
     type: "equirectangular",
