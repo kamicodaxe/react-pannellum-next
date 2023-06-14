@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "strict": true,
+        "jsx": "react",
+        "baseUrl": "./src",
+        "sourceMap": false,
+        "paths": {
+            "~/*": [
+                "./*"
+            ]
+        },
+        "typeRoots": [
+            "node_modules/@types",
+            "@types"
+        ]
+    },
+    "rootDir": "./src",
+    "incremental": true,
+    "experimentalDecorators": true,
+    "lib": [
+        "dom",
+        "es2015"
+    ]
+}

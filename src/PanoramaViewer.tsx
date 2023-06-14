@@ -2,6 +2,7 @@
 import 'pannellum';
 import 'pannellum/build/pannellum.css';
 import React, { useEffect, useRef } from 'react';
+import './styles.css';
 
 declare namespace pannellum {
     interface viewerOptions extends Partial<ViewerOptions> {
@@ -39,9 +40,9 @@ declare namespace pannellum {
     function viewer(container: HTMLElement, options: viewerOptions): viewer;
 }
 
-interface PanoramaViewerProps {
+export interface IPanoramaViewerProps {
     imagePath: string;
-    hotSpots: Hotspot[];
+    hotSpots?: HotspotProps[];
     autoLoad?: boolean;
     autoRotate?: number;
     compass?: boolean;
@@ -55,7 +56,7 @@ interface PanoramaViewerProps {
     hotSpotDebug?: boolean;
 }
 
-export interface Hotspot {
+export interface HotspotProps {
     pitch: number;
     yaw: number;
     type: string;
@@ -124,7 +125,7 @@ const defaultConfig: ViewerOptions = {
     hotSpots: [],
 };
 
-const PanoramaViewer: React.FC<PanoramaViewerProps> = ({
+const PanoramaViewer: React.FC<IPanoramaViewerProps> = ({
     imagePath,
     hotSpots,
     autoLoad,
@@ -150,13 +151,10 @@ const PanoramaViewer: React.FC<PanoramaViewerProps> = ({
                 hotSpotDebug: !!hotSpotDebug,
                 compass: !!compass,
                 showControls: !!showControls,
-                hotSpots: hotSpots.map(hotSpot => ({ ...hotSpot, clickHandlerFunc: hotSpot.onClick })),
+                hotSpots: hotSpots && hotSpots.map(hotSpot => ({ ...hotSpot, clickHandlerFunc: hotSpot.onClick })),
             });
 
-            // console.warn(viewer)
-
         }
-
 
         // Clean up the viewer on component unmount
         return () => {

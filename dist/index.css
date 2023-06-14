@@ -1,0 +1,41 @@
+.custom-hotspot {
+  background-color: #ffffff80;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  animation: 1.5s ease-in-out infinite pulsate-in;
+}
+
+@keyframes pulsate {
+  0% {
+    opacity: 1;
+    box-shadow: 0 0 #ffffff80;
+  }
+
+  50% {
+    opacity: .7;
+    box-shadow: 0 0 0 30px #fff0;
+  }
+
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 #ffffff80;
+  }
+}
+
+@keyframes pulsate-in {
+  0% {
+    opacity: 1;
+    box-shadow: 0 0 0 25px #ffffff40;
+  }
+
+  100% {
+    box-shadow: 0 0 #fff0;
+  }
+}
+
+.custom-hotspot:hover {
+  background-color: #0ff;
+}
+
+/*# sourceMappingURL=index.css.map */

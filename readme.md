@@ -21,10 +21,10 @@ yarn add react-pannellum-next
 
 ```tsx
 import React from 'react';
-import PanoramaViewer, { Hotspot } from 'react-pannellum';
+import PanoramaViewer, { HotspotProps } from 'react-pannellum';
 
 const App: React.FC = () => {
-  const hotSpots: Hotspot[] = [
+  const hotSpots: HotspotProps[] = [
     { pitch: 0, yaw: 0, type: 'info', text: 'Welcome!' },
     // Add more hotspots here
   ];
@@ -45,7 +45,7 @@ export default App;
 
 ```tsx
 import React from 'react';
-import { Hotspot } from 'react-pannellum-next';
+import { HotspotProps } from 'react-pannellum-next';
 
 const DynamicPanoramaViewer = dynamic(() => import('react-pannellum-next'), {
     ssr: false, // Disable server-side rendering for this component
@@ -53,7 +53,7 @@ const DynamicPanoramaViewer = dynamic(() => import('react-pannellum-next'), {
 
 const App: React.FC = () => {
 
-  const hotSpots: Hotspot[] = [
+  const hotSpots: HotspotProps[] = [
     { pitch: 0, yaw: 0, type: 'info', text: 'Welcome!' },
     // Add more hotspots here
   ];
