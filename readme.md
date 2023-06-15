@@ -1,4 +1,4 @@
-# PanoramaViewer Component
+# PanoramaViewer Component | IT WORKS!
 
 > The `PanoramaViewer` component is a React component that provides a panoramic image viewer using the Pannellum library. It allows you to display a 360-degree image and add interactive hotspots to it.
 
@@ -21,7 +21,7 @@ yarn add react-pannellum-next
 
 ```tsx
 import React from 'react';
-import PanoramaViewer, { HotspotProps } from 'react-pannellum';
+import { PanoramaViewer, HotspotProps } from 'react-pannellum';
 
 const App: React.FC = () => {
   const hotSpots: HotspotProps[] = [
@@ -47,7 +47,7 @@ export default App;
 import React from 'react';
 import { HotspotProps } from 'react-pannellum-next';
 
-const DynamicPanoramaViewer = dynamic(() => import('react-pannellum-next'), {
+const DynamicPanoramaViewer = dynamic(() => import('react-pannellum-next').PanoramaViewer, {
     ssr: false, // Disable server-side rendering for this component
 });
 
@@ -70,3 +70,4 @@ export default App;
 
 ```
 
+Connect on LinkedIn: [Loïc Kami](https://www.linkedin.com/in/lo%C3%AFc-kami-78a855265/)
