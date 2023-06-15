@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "ES6",
+        "target": "es2015",
         "moduleResolution": "node",
         "esModuleInterop": true,
         "strict": true,
@@ -8,6 +8,15 @@
         "baseUrl": "./src",
         "sourceMap": false,
         "declarationMap": false,
+        
+
+        "declaration": true,
+        "outDir": "./dist",
+        "module": "ESNext",
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+
+
         "paths": {
             "~/*": [
                 "./*"
@@ -24,5 +33,6 @@
     "lib": [
         "dom",
         "es2015"
-    ]
+    ],
+
 }

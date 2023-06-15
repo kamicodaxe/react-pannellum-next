@@ -1,0 +1,9 @@
+
+
+/node_modules
+/.cache
+/build
+/.parcel-cache
+/**/*.map
+/src/**
+/index.html

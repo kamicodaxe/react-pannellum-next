@@ -1,3 +1,3 @@
-export * from './src/PanoramaViewer';
-export { default as PanoramaViewer } from './src/PanoramaViewer';
+export * from './src/PanoramaViewer.tsx';
+export { default as PanoramaViewer } from './src/PanoramaViewer.tsx';
 

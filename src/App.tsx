@@ -1,5 +1,12 @@
+import React from 'react';
 import image from './images/alma.jpg';
 import PanoramaViewer from './PanoramaViewer';
+
+// declare module '*.jpg' {
+//   const value: string;
+//   export default value;
+// }
+
 
 const App: React.FC = () => {
     return <PanoramaViewer

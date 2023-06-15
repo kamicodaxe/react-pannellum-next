@@ -40,7 +40,7 @@ declare namespace pannellum {
     function viewer(container: HTMLElement, options: viewerOptions): viewer;
 }
 
-export interface IPanoramaViewerProps {
+export interface PanoramaViewerProps {
     imagePath: string;
     hotSpots?: HotspotProps[];
     autoLoad?: boolean;
@@ -125,7 +125,7 @@ const defaultConfig: ViewerOptions = {
     hotSpots: [],
 };
 
-const PanoramaViewer: React.FC<IPanoramaViewerProps> = ({
+const PanoramaViewer: React.FC<PanoramaViewerProps> = ({
     imagePath,
     hotSpots,
     autoLoad,
