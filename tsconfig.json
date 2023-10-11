@@ -9,6 +9,7 @@
         "sourceMap": false,
         "declarationMap": false,
         
+        
 
         "declaration": true,
         "outDir": "./dist",

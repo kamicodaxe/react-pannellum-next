@@ -1,44 +1,11 @@
 'use client';
-import 'pannellum';
-import 'pannellum/build/pannellum.css';
-import React, { useEffect, useRef } from 'react';
-import './styles.css';
-
-declare namespace pannellum {
-    interface viewerOptions extends Partial<ViewerOptions> {
-        type: string;
-        panorama: string;
-        // Add other options here
-    }
-
-    interface viewer {
-        destroy: () => void;
-        getContainer: () => HTMLElement;
-        loadScene: (sceneId: string | number, config: any, immediate?: boolean) => void;
-        getScene: () => any;
-        setScene: (sceneId: string | number, config: any, fadeDuration?: number) => void;
-        isLoaded: () => boolean;
-        toggleFullscreen: () => void;
-        getConfig: () => any;
-        getRenderer: () => any;
-        addHotSpot: (hotSpot: any) => void;
-        removeHotSpot: (hotSpot: any) => void;
-        getHotSpots: () => any[];
-        clearHotSpots: () => void;
-        resize: () => void;
-        onMouseDown: (event: MouseEvent) => void;
-        onMouseMove: (event: MouseEvent) => void;
-        onMouseUp: (event: MouseEvent) => void;
-        onTouchStart: (event: TouchEvent) => void;
-        onTouchMove: (event: TouchEvent) => void;
-        onTouchEnd: (event: TouchEvent) => void;
-        onOrientationChange: () => void;
-        onFullScreenChange: () => void;
-        onResize: () => void;
-    }
-
-    function viewer(container: HTMLElement, options: viewerOptions): viewer;
-}
+import React, { useEffect, useRef } from "react";
+import "./pannellum/css/pannellum.css";
+import "./pannellum/css/style-textInfo.css";
+import "./pannellum/js/libpannellum.js";
+import "./pannellum/js/pannellum.js";
+import "./pannellum/js/RequestAnimationFrame";
+import "./styles.css"
 
 export interface PanoramaViewerProps {
     imagePath: string;

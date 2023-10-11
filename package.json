@@ -1,13 +1,14 @@
 {
   "name": "react-pannellum-next",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "The `PanoramaViewer` component is a React component that provides a panoramic image viewer using the Pannellum library. It allows you to display a 360-degree image and add interactive hotspots to it.",
   "source": "src/index.ts",
   "main": "dist/index.js",
+  "module": "dist/module.js",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "parcel index.html",
+    "dev": "parcel watch",
     "build": "parcel build",
     "prepublishOnly": "npm run build"
   },
@@ -31,25 +32,15 @@
     "url": "https://github.com/kamicodaxe/react-pannellum-next/issues"
   },
   "homepage": "https://github.com/kamicodaxe/react-pannellum-next#readme",
-  "dependencies": {
-    "pannellum": "^2.5.6"
-  },
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.22.5",
-    "@babel/preset-env": "^7.22.5",
-    "@babel/preset-react": "^7.22.5",
-    "@parcel/packager-ts": "^2.9.2",
-    "@parcel/transformer-html": "^2.9.2",
-    "@parcel/transformer-js": "^2.9.2",
-    "@parcel/transformer-typescript-tsc": "^2.9.2",
-    "@parcel/transformer-typescript-types": "2.9.2",
-    "@types/react": "^18.2.11",
-    "@types/react-dom": "^18.2.4",
-    "parcel": "^2.9.2",
-    "typescript": "^5.1.3"
+    "@parcel/transformer-typescript-tsc": "^2.9.3",
+    "@types/react": "^18.2.28",
+    "@types/react-dom": "^18.2.13",
+    "parcel": "^2.9.3",
+    "typescript": "^5.2.2"
   }
 }
