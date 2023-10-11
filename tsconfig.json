@@ -4,12 +4,10 @@
         "moduleResolution": "node",
         "esModuleInterop": true,
         "strict": true,
-        "jsx": "react",
+        "jsx": "react-jsx",
         "baseUrl": "./src",
         "sourceMap": false,
         "declarationMap": false,
-        
-        
 
         "declaration": true,
         "outDir": "./dist",
